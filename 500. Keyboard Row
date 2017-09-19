@@ -1,0 +1,46 @@
+/** 500. Keyboard Row
+ * Given a List of words, return the words that can be typed using letters of alphabet on only one row's of American keyboard like the image below.
+ */
+public String[] findWords(String[] words) {
+	String first = "QWERTYUIOP";
+	String second = "ASDFGHJKL";
+	String third = "ZXCVBNM";
+	ArrayList<String> strs = new ArrayList<>();
+	boolean flag = true;
+	int at = 0;
+	for (int i = 0; i < words.length; i++) {
+		for (int j = 0; j < words[i].length(); j++) {
+			if (first.indexOf(Character.toUpperCase(words[i].charAt(j))) > -1) {
+				if (j == 0) at = 1;
+				if (at == 1) continue;
+				else {
+					flag = false;
+					break;
+				}
+			} else if (second.indexOf(Character.toUpperCase(words[i].charAt(j))) > -1) {
+				if (j == 0) at = 2;
+				if (at == 2) continue;
+				else {
+					flag = false;
+					break;
+				}
+			} else {
+				if (j == 0) at = 3;
+				if (at == 3) continue;
+				else {
+					flag = false;
+					break;
+				}
+			}
+		}
+		if (flag) {
+			strs.add(words[i]);
+		}
+		flag = true;
+	}
+	String[] rst = new String[strs.size()];
+	for (int i = 0; i < strs.size(); i++) {
+		rst[i] = strs.get(i);
+	}
+	return rst;
+}

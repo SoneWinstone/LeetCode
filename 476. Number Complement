@@ -1,0 +1,16 @@
+/** 476. Number Complement
+ * Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.
+ * Note:
+ * The given integer is guaranteed to fit within the range of a 32-bit signed integer.
+ * You could assume no leading zero bit in the integer’s binary representation.
+ * 此答案不是自己想出来的！！！
+ */
+public int findComplement(int num) {
+	int mask = 1, temp = num;
+	while (temp > 0) {
+		mask = mask << 1;
+		temp = temp >> 1;
+	}
+	// 精髓是mask-1
+	return num ^ (mask-1);
+}
