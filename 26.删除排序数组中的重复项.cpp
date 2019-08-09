@@ -67,12 +67,12 @@ public:
     }
 
     auto begin = nums.begin();
-    for (;begin < nums.end();) {
-        auto next = begin + 1;
-        while (next != nums.end() && *begin == *next) {
-            next = nums.erase(next);
-        }
-        begin = next;
+    for (; begin < nums.end();) {
+      auto next = begin + 1;
+      while (next != nums.end() && *begin == *next) {
+        next = nums.erase(next);
+      }
+      begin = next;
     }
     return nums.size();
   }
