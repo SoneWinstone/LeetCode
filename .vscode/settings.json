@@ -3,6 +3,8 @@
     "string_view": "cpp",
     "deque": "cpp",
     "unordered_map": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "cmath": "cpp",
+    "cstdlib": "cpp"
   }
 }
