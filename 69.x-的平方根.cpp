@@ -38,7 +38,7 @@
  * 应该使用牛顿迭代法
  */
 #include <cmath>
-
+#include <math.h>
 using namespace std;
 
 class Solution {
